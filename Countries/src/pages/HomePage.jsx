@@ -12,19 +12,19 @@ export default function HomePage(){
       });
     }, []);
     return <>
-    <div className="mainContainer " >
+    {/* <div className="mainContainer " > */} 
     {data?.map((d, i)=>{
         return <CountryCard 
             key={i}
             flag={d.flags.png}
             name={d.name.common}
-            population={d.population}
+            population={d.population.toLocaleString('en-US')}
             region={d.region}
             capital={d.capital}
         />
     })}
 
-    </div>
+    {/* </div> */}
 
     </>
 }

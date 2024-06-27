@@ -15,12 +15,12 @@ const filterSlice= createSlice({
             state.region= action.payload
         },
         changeTheme:(state)=>{
-            !state.isDark
+            state.isDark= !state.isDark
         }
     }
 })
-console.log(filterSlice);
 
-export const {addSearchData, filterByRegionr} = filterSlice.actions
+
+export const {addSearchData, filterByRegionr, changeTheme} = filterSlice.actions
 
 export default filterSlice.reducer
