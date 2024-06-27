@@ -1,5 +1,18 @@
 nav{
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 20px 60px;
+    box-shadow: 0 0 10px 0 lightgray;
+    background-color: white;
+}
+body{
+    background-color: rgba(232, 232, 232, 0.231);
+}
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+}
+.select{
+    width: 200px;
 }

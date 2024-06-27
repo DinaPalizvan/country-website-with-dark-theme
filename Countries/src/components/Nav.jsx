@@ -10,7 +10,6 @@ export default function Nav(){
 
     const handleChangeTheme=()=>{
         dispatch(changeTheme())
-        console.log(dark);
     }
 
     return <>
