@@ -16,8 +16,8 @@ export default function Nav(){
     <nav >
         <h4>Where in the world?</h4>
         <span>
-            <Moon style={{display: !dark? "inline": "none"}} onClick={handleChangeTheme} />
-            <MoonFill style={{display: dark? "inline": "none", color: "white"}} onClick={handleChangeTheme} />
+            <Moon style={{display: !dark? "inline": "none", cursor:"pointer"}} onClick={handleChangeTheme} />
+            <MoonFill style={{display: dark? "inline": "none", color: "white", cursor:"pointer"}} onClick={handleChangeTheme} />
             Dark Mode
         </span>
 

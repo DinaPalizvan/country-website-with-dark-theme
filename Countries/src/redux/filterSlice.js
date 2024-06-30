@@ -21,6 +21,6 @@ const filterSlice= createSlice({
 })
 
 
-export const {addSearchData, filterByRegionr, changeTheme} = filterSlice.actions
+export const {addSearchData, filterByRegion, changeTheme} = filterSlice.actions
 
 export default filterSlice.reducer
