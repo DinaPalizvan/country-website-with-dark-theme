@@ -31,14 +31,16 @@ export default function HomePage() {
       <Header />
       <div className="mainContainer" style={{backgroundColor: dark && "hsl(207, 26%, 17%)", color: dark && "white"}}>
         {data?.map((d, i) => {
+          // console.log(d);
           return (
-            <CountryCard
+            <CountryCard 
               key={i}
               flag={d.flags.png}
               name={d.name.common}
               population={d.population.toLocaleString("en-US")}
               region={d.region}
               capital={d.capital}
+              data={d}
             />
           );
         })}

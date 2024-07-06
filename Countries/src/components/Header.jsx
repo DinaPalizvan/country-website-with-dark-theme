@@ -20,9 +20,9 @@ export default function Header() {
       <div className="headerContainer" style={{backgroundColor: dark && "hsl(207, 26%, 17%)", color: dark && "white"}}>
         <div style={{position:"relative"}} >
         <Search style={{position:"absolute", top:"35%", left:30}} />
-        <input type="text" placeholder="Search for a country" style={{padding: "15px 50px", border:0, boxShadow: dark? "0 0 10px 0 hsl(210, 26%, 13%)": "0 0 10px 0 lightGray", borderRadius:5, backgroundColor: dark && "hsl(207, 26%, 17%)", color: dark && "white"}} onChange={handleSearch}/>
+        <input type="text" placeholder="Search for a country" style={{padding: "15px 50px", border:0, boxShadow: dark? "0 0 10px 0 hsl(210, 26%, 13%)": "0 0 10px 0 lightGray", borderRadius:5, backgroundColor: dark && "hsl(209, 23%, 22%)", color: dark && "white"}} onChange={handleSearch}/>
         </div>
-      <Form.Select aria-label="Default select example" className="select" onChange={handleSelection} style={{boxShadow: dark? "0 0 10px 0 hsl(210, 26%, 13%)": "0 0 10px 0 lightGray", borderRadius:5, backgroundColor: dark && "hsl(207, 26%, 17%)", color: dark && "white"}}>
+      <Form.Select aria-label="Default select example" className="select" onChange={handleSelection} style={{boxShadow: dark? "0 0 10px 0 hsl(210, 26%, 13%)": "0 0 10px 0 lightGray", borderRadius:5, backgroundColor: dark && "hsl(209, 23%, 22%)", color: dark && "white", border:0}}>
         <option value="">Filter by Region</option>
         <option value="Africa">Africa</option>
         <option value="Americas">America</option>

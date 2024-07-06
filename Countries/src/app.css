@@ -1,5 +1,5 @@
 *{
-    transition: all 0.3s ease-out;
+    transition: all 0.2s ease-out;
 }
 body{
     background-color: rgba(232, 232, 232, 0.231);
@@ -26,7 +26,7 @@ nav{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding-bottom: 71vh;
+    padding-bottom: 75vh;
 }
 .card{
     margin: 20px;
@@ -71,4 +71,7 @@ nav{
 }
 .borders{
     margin-top: 20px;
+}
+.countryPage{
+    padding-bottom: 20vh;
 }
