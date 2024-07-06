@@ -13,7 +13,7 @@ export default function Nav(){
     }
 
     return <>
-    <nav >
+    <nav style={{backgroundColor: dark? "hsl(209, 23%, 22%)":"white", color: dark ? "white": "hsl(200, 15%, 8%)" }}>
         <h4>Where in the world?</h4>
         <span>
             <Moon style={{display: !dark? "inline": "none", cursor:"pointer"}} onClick={handleChangeTheme} />

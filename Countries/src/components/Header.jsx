@@ -1,9 +1,10 @@
 import { Search } from "react-bootstrap-icons";
 import Form from "react-bootstrap/Form";
-import {useDispatch} from "react-redux"
+import {useDispatch, useSelector} from "react-redux"
 import { addSearchData, filterByRegion } from "../redux/filterSlice";
 
 export default function Header() {
+  const dark= useSelector(state=>state.filteredCountries.isDark)
   const dispatch= useDispatch()
 
   const handleSearch=(e)=>{
@@ -16,12 +17,12 @@ export default function Header() {
 
   return (
     <>
-      <div className="headerContainer">
+      <div className="headerContainer" style={{backgroundColor: dark && "hsl(207, 26%, 17%)", color: dark && "white"}}>
         <div style={{position:"relative"}} >
         <Search style={{position:"absolute", top:"35%", left:30}} />
-        <input type="text" placeholder="Search for a country" style={{padding: "15px 50px", border:0, boxShadow: "0 0 10px 0 lightGray", borderRadius:5}} onChange={handleSearch}/>
+        <input type="text" placeholder="Search for a country" style={{padding: "15px 50px", border:0, boxShadow: dark? "0 0 10px 0 hsl(210, 26%, 13%)": "0 0 10px 0 lightGray", borderRadius:5, backgroundColor: dark && "hsl(207, 26%, 17%)", color: dark && "white"}} onChange={handleSearch}/>
         </div>
-      <Form.Select aria-label="Default select example" className="select" onChange={handleSelection}>
+      <Form.Select aria-label="Default select example" className="select" onChange={handleSelection} style={{boxShadow: dark? "0 0 10px 0 hsl(210, 26%, 13%)": "0 0 10px 0 lightGray", borderRadius:5, backgroundColor: dark && "hsl(207, 26%, 17%)", color: dark && "white"}}>
         <option value="">Filter by Region</option>
         <option value="Africa">Africa</option>
         <option value="Americas">America</option>

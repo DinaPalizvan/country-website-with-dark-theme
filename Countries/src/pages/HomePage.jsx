@@ -7,7 +7,7 @@ import Header from "../components/Header";
 export default function HomePage() {
   const searchData = useSelector((state) => state.filteredCountries.searchData);
   const selectedRegion = useSelector((state) => state.filteredCountries.region);
-
+  const dark= useSelector(state=>state.filteredCountries.isDark)
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <div className="mainContainer ">
+      <div className="mainContainer" style={{backgroundColor: dark && "hsl(207, 26%, 17%)", color: dark && "white"}}>
         {data?.map((d, i) => {
           return (
             <CountryCard

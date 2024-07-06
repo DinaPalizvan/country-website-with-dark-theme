@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import Card from "react-bootstrap/Card";
+import { useSelector } from "react-redux";
 
 export default function CountryCard({
   flag,
@@ -8,9 +9,11 @@ export default function CountryCard({
   region,
   capital,
 }) {
+  const dark= useSelector(state=>state.filteredCountries.isDark)
+
   return (
     <>
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "18rem", boxShadow: dark&& "0 0 10px 0 hsl(210, 26%, 13%)", backgroundColor: dark&& "hsl(209, 23%, 22%)", color: dark&& "white" }}>
         <Card.Img variant="top" src={flag} style={{ height: 170 }} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
