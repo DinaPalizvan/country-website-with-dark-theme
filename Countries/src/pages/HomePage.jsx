@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getData } from "../utils/fetcherAPI";
 import CountryCard from "../components/CountryCard";
 import { useSelector } from "react-redux";
+import Header from "../components/Header";
 
 export default function HomePage() {
   const searchData = useSelector((state) => state.filteredCountries.searchData);
@@ -11,20 +12,23 @@ export default function HomePage() {
 
   useEffect(() => {
     getData("https://restcountries.com/v3.1/all").then((data) => {
-      let newData= data
+      let newData = data;
 
-      if(searchData) {
-        newData = newData.filter((d) => d.name.common.toLowerCase().includes(searchData.toLowerCase()));
+      if (searchData) {
+        newData = newData.filter((d) =>
+          d.name.common.toLowerCase().includes(searchData.toLowerCase())
+        );
       }
       if (selectedRegion) {
         newData = newData.filter((d) => d.region === selectedRegion);
       }
-      setData(newData)
+      setData(newData);
     });
   }, [searchData, selectedRegion]);
 
   return (
     <>
+      <Header />
       <div className="mainContainer ">
         {data?.map((d, i) => {
           return (

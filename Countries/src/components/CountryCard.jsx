@@ -8,12 +8,10 @@ export default function CountryCard({
   region,
   capital,
 }) {
-
-
   return (
     <>
       <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={flag} style={{height:170}} />
+        <Card.Img variant="top" src={flag} style={{ height: 170 }} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           {/* <Card.Text> */}
@@ -23,9 +21,15 @@ export default function CountryCard({
           <p>
             Region: <span>{region}</span>
           </p>
-          <p>
-            Capital: <span>{capital}</span>
-          </p>
+          {capital ? (
+            <p>
+              Capital: <span>{capital}</span>
+            </p>
+          ) : (
+            <p>
+              <br />
+            </p>
+          )}
           {/* </Card.Text> */}
         </Card.Body>
       </Card>
