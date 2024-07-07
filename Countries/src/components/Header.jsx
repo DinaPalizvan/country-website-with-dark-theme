@@ -25,7 +25,7 @@ export default function Header() {
         }}
       >
         <div style={{ position: "relative" }}>
-          <Search style={{ position: "absolute", top: "35%", left: 30 }} />
+          <Search className="search" style={{ position: "absolute", top: "35%", left: 30 }} />
           <input
             type="text"
             placeholder="Search for a country"

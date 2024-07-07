@@ -158,4 +158,7 @@ nav{
     .borderbtn{
         font-size: 14px;
     }
+    .search{
+        top: 25% !important;
+    }
 }
