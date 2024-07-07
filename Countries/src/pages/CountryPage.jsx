@@ -7,7 +7,6 @@ import BorderCountries from "../components/BorderCountries";
 export default function CountryPage() {
   const navigate = useNavigate();
   const location = useLocation();
-
   const data = location.state;
   const dark = useSelector((state) => state.filteredCountries.isDark);
 
@@ -39,70 +38,72 @@ export default function CountryPage() {
           Back
         </Button>
         <div className="detailContainer">
-            <img src={data.flags.png} alt="country-flag" />
+          <img src={data.flags.png} alt="country-flag" />
           <div className="detail">
             <h3>{data.name.common}</h3>
             <Row>
-              {data.name.nativeName && (
-                <Col>
-                  <span className="title">Native Name: </span>
-                  <span>{Object.values(data.name.nativeName)[0].common}</span>
-                </Col>
-              )}
-              {data.population && (
-                <Col>
-                  <span className="title">Population: </span>
-                  <span>{data.population.toLocaleString("en-US")}</span>
-                </Col>
-              )}
+              <Col className="detail1">
+                {data.name.nativeName && (
+                  <p>
+                    <span className="title">Native Name: </span>
+                    <span>{Object.values(data.name.nativeName)[0].common}</span>
+                  </p>
+                )}
+                {data.population && (
+                  <p>
+                    <span className="title">Population: </span>
+                    <span>{data.population.toLocaleString("en-US")}</span>
+                  </p>
+                )}
+
+                {data.region && (
+                  <p>
+                    <span className="title">Region: </span>
+                    <span>{data.region}</span>
+                  </p>
+                )}
+                {data.subregion && (
+                  <p>
+                    <span className="title">Sub Region: </span>{" "}
+                    <span>{data.subregion}</span>
+                  </p>
+                )}
+
+                {data.capital && (
+                  <p>
+                    <span className="title">Capital: </span>
+                    <span>{data.capital[0]}</span>
+                  </p>
+                )}
+              </Col>
+              <Col className="detail2">
+                {data.tld && (
+                  <p>
+                    <span className="title">Top Level Domain: </span>
+                    <span>{data.tld[0]}</span>
+                  </p>
+                )}
+
+                {data.currencies && (
+                  <p>
+                    <span className="title">Currencies: </span>
+                    <span>{Object.values(data.currencies)[0].name}</span>
+                  </p>
+                )}
+                {data.languages && (
+                  <p>
+                    <span className="title">Languages: </span>
+                    <span>{Object.values(data.languages).join(", ")}</span>
+                  </p>
+                )}
+              </Col>
             </Row>
-            <Row>
-              {data.region && (
-                <Col>
-                  <span className="title">Region: </span>
-                  <span>{data.region}</span>
-                </Col>
-              )}
-              {data.subregion && (
-                <Col>
-                  <span className="title">Sub Region: </span>{" "}
-                  <span>{data.subregion}</span>
-                </Col>
-              )}
-            </Row>
-            <Row>
-              {data.capital && (
-                <Col>
-                  <span className="title">Capital: </span>
-                  <span>{data.capital[0]}</span>
-                </Col>
-              )}
-              {data.tld && (
-                <Col>
-                  <span className="title">Top Level Domain: </span>
-                  <span>{data.tld[0]}</span>
-                </Col>
-              )}
-            </Row>
-            <Row>
-              {data.currencies && (
-                <Col>
-                  <span className="title">Currencies: </span>
-                  <span>{Object.values(data.currencies)[0].name}</span>
-                </Col>
-              )}
-              {data.languages && (
-                <Col>
-                  <span className="title">Languages: </span>
-                  <span>{Object.values(data.languages).join(", ")}</span>
-                </Col>
-              )}
-            </Row>
-            {data.borders &&(
-              <div className="borders title">BorderCountries: 
-              {data.borders.map((cca3, i)=>{
-                return <BorderCountries key={i} code={cca3}/>
-              })}
+            {data.borders && (
+              <div className="borders title">
+                BorderCountries:
+                {data.borders.map((cca3, i) => {
+                  return <BorderCountries key={i} code={cca3} />;
+                })}
               </div>
             )}
           </div>

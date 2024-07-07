@@ -9,9 +9,10 @@ export default function CountryCard({
   population,
   region,
   capital,
-  data
+  data,
 }) {
   const dark = useSelector((state) => state.filteredCountries.isDark);
+  
   return (
     <>
       <Card
