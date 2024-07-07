@@ -22,7 +22,7 @@ nav{
     padding: 20px 60px;
     box-shadow: 0 0 10px 0 lightgray;
 }
-.bi-moon-fill{
+.bi-moon-fill, .bi-moon{
     margin-right: 6px;
 }
 .headerContainer{
