@@ -31,7 +31,6 @@ export default function HomePage() {
       <Header />
       <div className="mainContainer" style={{backgroundColor: dark && "hsl(207, 26%, 17%)", color: dark && "white"}}>
         {data?.map((d, i) => {
-          // console.log(d);
           return (
             <CountryCard 
               key={i}

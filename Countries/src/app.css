@@ -26,7 +26,8 @@ nav{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding-bottom: 75vh;
+    padding-bottom: 10vh;
+    min-height: 90vh;
 }
 .card{
     margin: 20px;
@@ -42,6 +43,14 @@ nav{
     border: 0;
     box-shadow: 0 0 10px 0 lightgray;
     margin: 50px 60px;
+}
+.borderbtn{
+    padding: 4px 6px;
+    min-width: 110px;
+    border: 0;
+    box-shadow: 0 0 10px 0 lightgray;
+    margin: 10px;
+    border-radius: 3px;
 }
 .title:not(.title span){
     font-weight: 600;
@@ -73,5 +82,6 @@ nav{
     margin-top: 20px;
 }
 .countryPage{
-    padding-bottom: 20vh;
+    /* padding-bottom: 20vh; */
+    min-height: 90vh;
 }
